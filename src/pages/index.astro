@@ -1,10 +1,25 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import Hero from "@/components/Hero.astro";
+import Philosophy from "@/components/Philosophy.astro";
+import SkyBreak from "@/components/SkyBreak.astro";
+import Services from "@/components/Services.astro";
+import CaseStudies from "@/components/CaseStudies.astro";
+import Contact from "@/components/Contact.astro";
+import Footer from "@/components/Footer.astro";
 ---
 
-<BaseLayout title="blstm.ai" description="Technology consultancy">
-	<main class="flex min-h-screen flex-col items-center justify-center px-4">
-		<h1 class="text-4xl font-bold tracking-tight sm:text-6xl">blstm.ai</h1>
-		<p class="mt-4 text-lg text-slate-400">Coming soon.</p>
+<BaseLayout
+	title="Bluestem | AI Lab & Technical Consultancy"
+	description="AI lab and technical consultancy in western Kansas. Machine learning infrastructure, technical consulting, and R&D."
+>
+	<main>
+		<Hero />
+		<Philosophy />
+		<Services />
+		<CaseStudies />
+		<SkyBreak />
+		<Contact />
 	</main>
+	<Footer />
 </BaseLayout>

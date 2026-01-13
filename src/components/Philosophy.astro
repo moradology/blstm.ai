@@ -1,0 +1,45 @@
+---
+import { Image } from "astro:assets";
+import neuralStructure from "@/assets/neural-structure.png";
+---
+
+<section class="py-20 md:py-28 px-6">
+	<div class="max-w-5xl mx-auto">
+		<div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+			<!-- Image -->
+			<div class="order-2 lg:order-1">
+				<Image
+					src={neuralStructure}
+					alt="Neural network structure resembling organic root systems"
+					class="w-full h-auto"
+					format="webp"
+					quality={90}
+				/>
+			</div>
+
+			<!-- Text content -->
+			<div class="order-1 lg:order-2">
+				<h2 class="text-sm uppercase tracking-[0.2em] text-sienna-500 mb-8">
+					Our Approach
+				</h2>
+
+				<p class="text-2xl md:text-3xl font-light text-earth-950 leading-snug mb-8">
+					Technology rooted in place.
+				</p>
+
+				<div class="space-y-5 text-earth-900/75 leading-relaxed">
+					<p>
+						The future is here—it's just not evenly distributed.
+						We want to change that.
+					</p>
+					<p>
+						Frontier AI and machine learning, brought to places and industries
+						that haven't had access. Coast not required.
+					</p>
+				</div>
+
+				<div class="w-16 h-0.5 bg-sienna-500 mt-10" />
+			</div>
+		</div>
+	</div>
+</section>

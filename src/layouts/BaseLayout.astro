@@ -17,6 +17,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="canonical" href={canonicalURL} />
 
+		<!-- Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap"
+			rel="stylesheet"
+		/>
+
 		<title>{title}</title>
 		<meta name="description" content={description} />
 
@@ -36,10 +44,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 		<slot name="head" />
 	</head>
-	<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+	<body class="min-h-screen bg-parchment-200 text-earth-900 antialiased font-sans">
 		<slot />
-
-		<!-- Cloudflare Web Analytics (replace with your token after enabling) -->
-		<!-- <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "YOUR_TOKEN"}'></script> -->
 	</body>
 </html>

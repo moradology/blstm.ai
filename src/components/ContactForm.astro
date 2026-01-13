@@ -1,0 +1,97 @@
+---
+const WEB3FORMS_KEY = "56e679a3-e34e-4181-b8a6-6fe45ae9267f";
+---
+
+<form
+	action="https://api.web3forms.com/submit"
+	method="POST"
+	class="space-y-5"
+	id="contact-form"
+>
+	<input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
+	<input type="hidden" name="subject" value="New contact from blstm.ai" />
+	<input type="checkbox" name="botcheck" class="hidden" />
+
+	<div>
+		<label for="name" class="block text-sm text-earth-900/80 mb-2">
+			Name
+		</label>
+		<input
+			type="text"
+			name="name"
+			id="name"
+			required
+			class="w-full px-4 py-3 bg-parchment-50 border border-parchment-400 text-earth-900 focus:outline-none focus:border-sienna-500 transition-colors"
+		/>
+	</div>
+
+	<div>
+		<label for="email" class="block text-sm text-earth-900/80 mb-2">
+			Email
+		</label>
+		<input
+			type="email"
+			name="email"
+			id="email"
+			required
+			class="w-full px-4 py-3 bg-parchment-50 border border-parchment-400 text-earth-900 focus:outline-none focus:border-sienna-500 transition-colors"
+		/>
+	</div>
+
+	<div>
+		<label for="message" class="block text-sm text-earth-900/80 mb-2">
+			Message
+		</label>
+		<textarea
+			name="message"
+			id="message"
+			required
+			rows="5"
+			class="w-full px-4 py-3 bg-parchment-50 border border-parchment-400 text-earth-900 focus:outline-none focus:border-sienna-500 transition-colors resize-none"
+		></textarea>
+	</div>
+
+	<button
+		type="submit"
+		class="w-full px-6 py-3.5 bg-sienna-500 text-parchment-50 font-medium hover:bg-sienna-600 focus:outline-none focus:ring-2 focus:ring-sienna-500 focus:ring-offset-2 focus:ring-offset-parchment-100 transition-colors"
+	>
+		Send Message
+	</button>
+
+	<p id="form-status" class="text-center text-sm" />
+</form>
+
+<script>
+	const form = document.getElementById('contact-form') as HTMLFormElement;
+	const status = document.getElementById('form-status') as HTMLParagraphElement;
+
+	form?.addEventListener('submit', async (e) => {
+		e.preventDefault();
+
+		const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+		const originalText = submitBtn.textContent;
+		submitBtn.textContent = 'Sending...';
+		submitBtn.disabled = true;
+
+		const formData = new FormData(form);
+
+		const response = await fetch(form.action, {
+			method: 'POST',
+			body: formData,
+		});
+
+		const result = await response.json();
+
+		if (result.success) {
+			status.textContent = 'Message sent. We\'ll be in touch.';
+			status.className = 'text-center text-sm text-sienna-600';
+			form.reset();
+		} else {
+			status.textContent = 'Something went wrong. Please try again.';
+			status.className = 'text-center text-sm text-red-700';
+		}
+
+		submitBtn.textContent = originalText;
+		submitBtn.disabled = false;
+	});
+</script>

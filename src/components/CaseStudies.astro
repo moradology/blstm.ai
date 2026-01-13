@@ -1,0 +1,61 @@
+---
+import { Image } from "astro:assets";
+import cattleSegmentation from "@/assets/cattle-segmentation.png";
+import receiptOcr from "@/assets/receipt-ocr.png";
+import ocrPile from "@/assets/ocr-pile.png";
+
+const ideas = [
+	{
+		image: cattleSegmentation,
+		title: "Image Labeling",
+		description: "Automatically detect, classify, and count objects in photos and video.",
+		alt: "Aerial view of cattle with ML segmentation overlay",
+	},
+	{
+		image: receiptOcr,
+		title: "Document Automation",
+		description: "Extract structured data from receipts, invoices, and forms automatically.",
+		alt: "Receipt with OCR annotations extracting vendor and amount",
+	},
+	{
+		image: ocrPile,
+		title: "Bulk Digitization",
+		description: "Turn decades of paper records into searchable, structured data.",
+		alt: "Stack of documents being processed with OCR",
+	},
+];
+---
+
+<section class="py-20 md:py-28 px-6">
+	<div class="w-full h-px bg-sienna-500/25 mb-16 md:mb-20" />
+
+	<div class="max-w-5xl mx-auto">
+		<h2 class="text-sm uppercase tracking-[0.2em] text-sienna-500 mb-16 text-center">
+			Possibilities
+		</h2>
+
+		<div class="grid md:grid-cols-3 gap-8">
+			{ideas.map((item) => (
+				<article class="group">
+					<div class="aspect-[4/3] overflow-hidden mb-4">
+						<Image
+							src={item.image}
+							alt={item.alt}
+							class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+							format="webp"
+							quality={85}
+						/>
+					</div>
+					<h3 class="text-base font-medium text-earth-950 text-center mb-2">
+						{item.title}
+					</h3>
+					<p class="text-earth-900/65 text-sm leading-relaxed text-center">
+						{item.description}
+					</p>
+				</article>
+			))}
+		</div>
+	</div>
+
+	<div class="w-full h-px bg-sienna-500/25 mt-16 md:mt-20" />
+</section>

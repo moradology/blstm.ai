@@ -1,0 +1,14 @@
+---
+import { Image } from "astro:assets";
+import skyGrid from "@/assets/sky-grid.png";
+---
+
+<div class="w-full">
+	<Image
+		src={skyGrid}
+		alt="Kansas prairie at dusk"
+		class="w-full h-64 md:h-80 lg:h-96 object-cover"
+		format="webp"
+		quality={85}
+	/>
+</div>

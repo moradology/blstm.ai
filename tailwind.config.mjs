@@ -4,14 +4,37 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				wheat: {
-					50: "#fdfbf7",
-					100: "#f5f0e6",
-					200: "#e8dcc6",
-					500: "#8b6914",
-					600: "#6b5010",
-					700: "#4a380b",
+				// Warm browns from logo - sienna family
+				sienna: {
+					50: "#FAF6F1",
+					100: "#F2EBE3",
+					200: "#E5D7C8",
+					300: "#D4BBA3",
+					400: "#B8936D",
+					500: "#9C6644", // Primary - matches logo
+					600: "#895838", // Accent - user specified (137,88,56)
+					700: "#704A24",
+					800: "#5A3C1E",
+					900: "#3D2814",
 				},
+				// Warm parchment/linen background
+				parchment: {
+					50: "#FAF8F4",
+					100: "#F5F2EB",
+					200: "#F0EEDC", // Primary background (240,238,220)
+					300: "#E8E2D0",
+					400: "#DDD3BE",
+					500: "#CCC0A6",
+				},
+				// Deep warm brown for text
+				earth: {
+					800: "#3D3428",
+					900: "#2C2416",
+					950: "#1A160E",
+				},
+			},
+			fontFamily: {
+				sans: ['"DM Sans"', "system-ui", "sans-serif"],
 			},
 		},
 	},
