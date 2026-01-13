@@ -1,0 +1,6 @@
+name = "blstm-ai"
+compatibility_date = "2024-01-01"
+
+# Uncomment when adding Workers functions
+# [site]
+# bucket = "./dist"
