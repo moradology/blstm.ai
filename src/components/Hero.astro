@@ -1,19 +1,24 @@
 ---
 import { Image } from "astro:assets";
-import icon from "@/assets/blstm-icon.svg";
+import icon from "@/assets/bluestem-icon.png";
 ---
 
 <section class="min-h-screen flex flex-col justify-center px-6 py-16 md:py-24">
 	<div class="max-w-2xl mx-auto w-full">
 		<!-- Logo -->
-		<div class="mb-16 md:mb-20">
+		<div class="mb-16 md:mb-20 text-center">
 			<Image
 				src={icon}
-				alt="Bluestem"
-				width={280}
-				height={280}
+				alt=""
+				width={200}
+				height={133}
+				format="webp"
+				quality={100}
 				class="mx-auto"
 			/>
+			<h1 class="text-3xl tracking-wide text-sienna-600 mt-4">
+				bluestem
+			</h1>
 		</div>
 
 		<!-- Rule -->
